@@ -5,7 +5,7 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        EmployeeListView    = require('app/views/EmployeeList'),
+        HeroListView    = require('app/views/HeroList'),
         tpl                 = require('text!tpl/Reports.html'),
 
         template = _.template(tpl);
@@ -17,9 +17,9 @@ define(function (require) {
         },
 
         render: function () {
-            this.$el.html(template(this.model.attributes));
+            this.$el.html(template(this.model.toJSON()));
             this.model.reports.fetch();
-            this.listView = new EmployeeListView({collection: this.model.reports, el: $(".scroller", this.el)});
+            this.listView = new HeroListView({collection: this.model.reports, el: $(".scroller", this.el)});
             return this;
         }
 

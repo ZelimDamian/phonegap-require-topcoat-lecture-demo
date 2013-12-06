@@ -5,28 +5,28 @@ define(function (require) {
     var $                   = require('jquery'),
         Backbone            = require('backbone'),
 
-        Employee = Backbone.Model.extend({
+        Hero = Backbone.Model.extend({
 
-            urlRoot: "http://localhost:3000/employees",
+            urlRoot: "http://localhost:3000/heros",
 
             initialize: function () {
-                this.reports = new EmployeeCollection();
+                this.reports = new HeroCollection();
                 this.reports.url = this.urlRoot + "/" + this.id + "/reports";
             }
 
         }),
 
-        EmployeeCollection = Backbone.Collection.extend({
+        HeroCollection = Backbone.Collection.extend({
 
-            model: Employee,
+            model: Hero,
 
-            url: "http://localhost:3000/employees"
+            url: "http://localhost:3000/heros"
 
         });
 
     return {
-        Employee: Employee,
-        EmployeeCollection: EmployeeCollection
+        Hero: Hero,
+        HeroCollection: HeroCollection
     };
 
 });

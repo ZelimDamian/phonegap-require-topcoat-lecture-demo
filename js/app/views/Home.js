@@ -5,8 +5,8 @@ define(function (require) {
     var $                   = require('jquery'),
         _                   = require('underscore'),
         Backbone            = require('backbone'),
-        EmployeeListView    = require('app/views/EmployeeList'),
-        models              = require('app/models/employee'),
+        HeroListView    = require('app/views/HeroList'),
+        models              = require('app/models/hero'),
         tpl                 = require('text!tpl/Home.html'),
 
         template = _.template(tpl);
@@ -15,13 +15,13 @@ define(function (require) {
     return Backbone.View.extend({
 
         initialize: function () {
-            this.employeeList = new models.EmployeeCollection();
+            this.heroList = new models.HeroCollection();
             this.render();
         },
 
         render: function () {
             this.$el.html(template());
-            this.listView = new EmployeeListView({collection: this.employeeList, el: $(".scroller", this.el)});
+            this.listView = new HeroListView({collection: this.heroList, el: $(".scroller", this.el)});
             return this;
         },
 
@@ -32,7 +32,7 @@ define(function (require) {
 
         search: function (event) {
             var key = $('.search-key').val();
-            this.employeeList.fetch({reset: true, data: {name: key}});
+            this.heroList.fetch({reset: true, data: {name: key}});
         },
 
         onkeypress: function (event) {

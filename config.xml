@@ -6,10 +6,10 @@
         id        = "com.stunsci.lecture-demo"
         version   = "1.0.0">
 
-    <name>Lecture Demo</name>
+    <name>Game of Thrones Lecture Demo</name>
 
     <description>
-        Demo for a Mobile Development lecture
+        Demo for a Mobile Development lecture with Reference to Game of Thrones
     </description>
 
     <author href="http://stunsci.com" email="zelimdamian@gmail.com">

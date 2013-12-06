@@ -9,7 +9,7 @@ require.config({
 
     map: {
         '*': {
-            'app/models/employee': 'app/models/memory/employee'
+            'app/models/hero': 'app/models/memory/hero'
         }
     },
 
